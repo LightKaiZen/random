@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <button id="btnContact">Cliquez ici pour me contacter.</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="formulaire">
+                <form action="mailto:client@jsp.fr" method="post" enctype="text/plain">
+                    <fieldset>
+                        <legend>Veuillez entre vos informations ci-dessous.</legend>
+                        <br>
+                        <br>
+                        <div class="prenomnom">
+                            <label for="prenomnom">Nom complet : </label>
+                            <br>
+                            <br>
+                            <input type="text" name="prenomEtNom" placeholder="Nom & prénom ici">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="mail">
+                            <label for="mail">Adresse mail : </label>
+                            <br>
+                            <br>
+                            <input type="text" name="adresseMail" placeholder="Votre mail ici">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="descript">
+                            <label for="descript"> Description : </label>
+                            <br>
+                            <br>
+                            <textarea name="contenuDuMessage" cols="10" rows="10" placeholder="Inscrivez votre requête à cet endroit."></textarea>
+                            <br>
+                            <input type="submit" value="Envoyer" style="background: #d4f6f3" id="button">
+                        </div>
+                        <br>
+                        <br>
+                        <br>  
+                    </fieldset>
+                </form>
+          </div>
+    </div>
+
+
+
+    <script>
+        var modal = document.getElementById("modal");
+        var btn = document.getElementById("btnContact");
+        var span = document.getElementsByClassName("close")[0];
+        
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
+
+
+</body>
+</html>
